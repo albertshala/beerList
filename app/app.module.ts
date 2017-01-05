@@ -5,6 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent }  from './app.component';
+import { BeerListComponent } from "./products/beer-list.component";
+import { ProductFilterPipe } from './products/product.filter.pipe';
+import { StarComponent } from './shared/star.component';
 import { WelcomeComponent } from './home/welcome.component';
 
 @NgModule({
@@ -13,13 +16,17 @@ import { WelcomeComponent } from './home/welcome.component';
       FormsModule,
       HttpModule,
       RouterModule.forRoot([
-        //{path: 'beers', component: BeerListComponent},
-        //{path: 'beer/:id', component: ProductDetailComponent},
+        {path: 'beers', component: BeerListComponent},
         {path: 'welcome', component: WelcomeComponent},
         {path: '', redirectTo: 'welcome', pathMatch: 'full'}
       ])
      ],
-  declarations: [ AppComponent, WelcomeComponent],
+  declarations: [
+    AppComponent,
+    BeerListComponent,
+    ProductFilterPipe,
+    StarComponent,
+    WelcomeComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { ProductService } from './products/product.service';
 
 @Component({
   selector: 'beer-app',
@@ -18,7 +19,8 @@ import { RouterLink } from '@angular/router';
       <router-outlet></router-outlet>
    </div>
   </div>
-  `
+  `,
+  providers: [ProductService]
 })
 export class AppComponent  {
   pageTitle = 'Beer App';
